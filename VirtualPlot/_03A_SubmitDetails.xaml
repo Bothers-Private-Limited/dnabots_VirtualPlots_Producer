@@ -1,0 +1,293 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_03A_SubmitDetails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="out_str_BookingNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_BuyerName" Type="OutArgument(x:String)" />
+    <x:Property Name="out_SellerName" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>466,2947</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_03A_SubmitDetails_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="62">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_03A_SubmitDetails" sap:VirtualizedContainerService.HintSize="476,2882" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_aaname" />
+      <Variable x:TypeArguments="x:String" Default="9574876588" Name="str_BuyerMobile" />
+      <Variable x:TypeArguments="x:String" Name="str_SellerMobile" />
+      <Variable x:TypeArguments="x:String" Name="str_BuyerName" />
+      <Variable x:TypeArguments="x:String" Name="str_SellerName" />
+      <Variable x:TypeArguments="x:String" Name="str_BookingNumber" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Assign (str_BuyerMobile)" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_BuyerMobile]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Buyer Mobile").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign (str_SellerMobile)" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_SellerMobile]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Seller Mobile").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="SingleWindow" DisplayName="Use Browser Chrome: https://botsdna.com/vitrualplots/ (attach browser)" sap:VirtualizedContainerService.HintSize="434,1853" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="7360539c-3a2f-4f19-8cd6-b48d7854a4a9" UserDataFolderMode="Automatic" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do (SubmitDetails Attach browser)" sap:VirtualizedContainerService.HintSize="376,1637" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check (Buyer)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_1">
+              <ui:Check.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7d62b920-fd5d-4408-b181-7135ce497be8" InformativeScreenshot="65f258089cbedeabe9ce2c1a73ace779" Selector="[String.Format(&quot;&lt;webctrl tag='TD' innertext='{0}' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='INPUT' idx='1' /&gt;&quot;, str_BuyerMobile)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Check.Target>
+            </ui:Check>
+            <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check (Seller)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_2">
+              <ui:Check.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="609a9e3c-c140-4c76-ab82-15f6c710944e" InformativeScreenshot="49d54cbedd9a2ab3e08555827afc5008" Selector="[String.Format(&quot;&lt;webctrl isleaf='1' tableCol='4' tag='TD' aaname='{0}' colName='Mobile' /&gt;&lt;nav up='1' /&gt;&lt;webctrl name='seller' tag='INPUT' /&gt;&quot;, str_SellerMobile)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Check.Target>
+            </ui:Check>
+            <ui:Highlight HighlightTime="{x:Null}" Color="Gold" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Highlight_1">
+              <ui:Highlight.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2fe95f76-003d-4695-af56-a0a97a6fa6fa" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="[String.Format(&quot;&lt;webctrl isleaf='1' tableCol='4' tag='TD' aaname='{0}' colName='Mobile' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Name' /&gt;&quot;, str_BuyerMobile)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Highlight.Target>
+            </ui:Highlight>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text (Buyer Name)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4ce63800-438e-4eb9-9d2b-dce4ecdc8055" InformativeScreenshot="283c7932c8f3b23c94aab1070f1db3c4" Selector="[String.Format(&quot;&lt;webctrl isleaf='1' tableCol='4' tag='TD' aaname='{0}' colName='Mobile' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Name' /&gt;&quot;, str_BuyerMobile)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[out_BuyerName]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <ui:Highlight HighlightTime="{x:Null}" Color="Gold" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Highlight_2">
+              <ui:Highlight.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="567f282b-99fc-4233-b19e-4c4bb9d5acd3" InformativeScreenshot="a0eeb0b41efbbde3e908531c016bab32" Selector="[String.Format(&quot;&lt;webctrl isleaf='1' tableCol='4' tag='TD' aaname='{0}' colName='Mobile' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Name' /&gt;&quot;, str_SellerMobile)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Highlight.Target>
+            </ui:Highlight>
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text (Seller Name)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+              <ui:GetValue.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b00d973e-b776-435c-b227-d03c122384a9" InformativeScreenshot="a9de76202817fa29ea4354c1ea537f03" Selector="[String.Format(&quot;&lt;webctrl isleaf='1' tableCol='4' tag='TD' aaname='{0}' colName='Mobile' /&gt;&lt;nav up='1' /&gt;&lt;webctrl isleaf='1' tag='TD' colName='Name' /&gt;&quot;, str_SellerMobile)]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetValue.Target>
+              <ui:GetValue.Value>
+                <OutArgument x:TypeArguments="x:String">[out_SellerName]</OutArgument>
+              </ui:GetValue.Value>
+            </ui:GetValue>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into (Plot No)" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="7360539c-3a2f-4f19-8cd6-b48d7854a4a9" Text="[in_TransactionItem.SpecificContent(&quot;Plot No&quot;).ToString]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable Accuracy="0.45" BrowserURL="https://botsdna.com/vitrualplots/" ContentHash="NPU31ohKuUO9SVi45ZrsFQ" DesignTimeRectangle="513, 319, 177, 21" ElementType="InputBox" FriendlyName="'txt_PlotNo'" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzyAccuracy="0.55" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="94dfbd2a-5400-43a7-a2da-d4f2b410d035" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALUAAAAZCAYAAAB3jW88AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABxSURBVHhe7dLBCYAwAARBq077ET+SiA1kmYF73XevCTGiJmeLeoxhduRWb9TfA06y9itqEkRNjqjJETU5oiZH1OSImhxRkyNqckRNjqjJETU5oiZH1OSImhxRkyNqckRNzm/Uj+cwO3GrLWooEDUxc96Z+wJd0ibQxQAAAABJRU5ErkJggg==" InformativeScreenshot="9c11962bb55b9f86f2c909a317c4f53e.png" IsResponsive="True" Reference="G0nWXQ8GcUqHlwjLlnOM5w/oDxZZ08NDEuLaLf96c_beg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='https://botsdna.com/vitrualplots/' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target Accuracy="0.54" DesignTimeRectangle="275, 310, 230, 38" ElementType="Text" FriendlyName="'txt_PlotNo'" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TD' /&gt;" FuzzyAccuracy="0.93" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname=' Plot No :' check:innerText='Plot No :' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOoAAAAqCAYAAAC9fMf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIGSURBVHhe7dhbjoIwGEBh1kgyGzJsBZeiq+DJB5fRoaWlN3BAp9DfnC9pJlptnYdD0UYBqB6hAgLMoQ7DwGAwKh1RqADqETZJqEClCBUQgFABAQgVEIBQAQEIFRCAUAEBCBUQgFABAQgVEOD9UB+9aptGNYujUzf7Mu15bVXz06unfbyJXv8SrpJw+6+85nYZ5/buCVTq41C7u30cMJEEse4P9an6n/UIjeBCsfoZCBVfokioYyaqC+ZKh5qe4Bqh4psUDbW9TpkshTqdun74dab3+rk8QsPtf53+ur2cxVCjuBfmM/EFBzhLmVCTuThUe1qGAd47E45fa/uJqt9j1m9a1T/s3CgL1e7hg7Z7/BkrcL4CoeYhRqGaYOKotDisfaHOp3AQ3ab1Xl1sgIp8HOp8GxmO5JQKQ51Ov4Xb2SjgvaGOkhMzDjW+Ffc27ANUoMCJmstCTUI2Pg11ZOK0ayyFmn9WQoUM54S6eqK6598L1QWp37fnRM2fB+pyeKhlvqMG7C1wfAu+st6O/wE40/Ghumj+8Vff1HQLHIY6snvwqy8kOiHUyRyTGfkJ60/GhTnt1f52LovQPe/GqwuBsfbdFjjW+6ECOAyhAgIQKiAAoQICECogAKECAhAqIAChAgIQKiAAoQICECogAKECAhAqIAChAgKshspgMOochMpgVD8G9Qs5yuDEXljnogAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into (Sqft)" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7360539c-3a2f-4f19-8cd6-b48d7854a4a9" Text="[in_TransactionItem.SpecificContent(&quot;Sqft&quot;).ToString]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable Accuracy="0.61" BrowserURL="https://botsdna.com/vitrualplots/" ContentHash="Rea9b6tHdUWY6pPDTmQTlQ" DesignTimeRectangle="513, 357, 177, 21" ElementType="InputBox" FriendlyName="'txt_Sqft'" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='' aaname='' /&gt;" Guid="672ad2f7-7df4-4099-a21e-6da6b25cf6b5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALUAAAAZCAYAAAB3jW88AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVHhe7dLBCYAwAARBq063qUXxoUSwgSwzcK/77jHnPM1KE7Xl9ol6jGG25daO36jvA3a1hi1qEkRNjqjJETU5oiZH1OSImhxRkyNqckRNjqjJETU5oiZH1OSImhxRkyNqckRNzm/UT9hmO27t+BO1WWGittjmeQE3A763Si2F1AAAAABJRU5ErkJggg==" InformativeScreenshot="c656eadc045d759cf16a46473d01c573.png" IsResponsive="True" Reference="G0nWXQ8GcUqHlwjLlnOM5w/7avvlbo78UeBGYCfDlEG1g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='https://botsdna.com/vitrualplots/' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target Accuracy="0.51" DesignTimeRectangle="275, 348, 230, 38" ElementType="Text" FriendlyName="'txt_Sqft'" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname=' Sqft :' check:innerText='Sqft :' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOoAAAAqCAYAAAC9fMf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGySURBVHhe7dr9bYJAGMBh5+oCJm5TF9FBWMPEJZzliiciUKgcJY1vfd7kScpH+e+XO0o3qZnL5dL8ZIx5hek2KVRjXnQmQwVek1AhAKFCAEKFAIQKAQgVAhAqBCBUCECoEIBQIQChQgBChQAWhVp9btJm07evxu995nzc9p5xPV76LPivCkM9p8Oujmp3SOfu+dMhbevQtsdz594Zmt9rwxweA1lZqDmkbTqcvl+7rYz7VA3O/0ioMEtZqNW+jnE81FH5/vv2uI64G3rvWu1j1z/+rMafeanSvr4uZt5J4db3Fsk1pKfb3CbENqg2zE7oVlSYZcEfkx6xPgy3vM277GBVvG2PhQqlFoTaMdy+tmFObE/z/UKFUr8LteP2yaaJcCq4fF6oUGq1UPuRWVFhTUWh5lVz+A31Lkd2j9A7KqypbEVtQhr7dJIj7p6fiFCoUG7B1rdZLXN0D6NxtXFe1YEen2x9a+2/J06t3L6j8obWe0edY/iOCswiVAhAqBDA34YKLCJUCECoEIBQIQChQgBChQCECgEIFQIQKgQgVAhAqBCAUCGAXqjGmNeZR5MpfQEordG/rSuB3gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click (Submit)" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7360539c-3a2f-4f19-8cd6-b48d7854a4a9" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable Accuracy="0.68" BrowserURL="https://botsdna.com/vitrualplots/" ContentHash="5xVQoSDojky6224AzKY6mw" DesignTimeRectangle="513, 395, 58, 21" ElementType="Button" FriendlyName="'btn_Submit'" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzyAccuracy="0.87" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='button' tag='INPUT' class='' aaname='Submit' check:text='Submit' /&gt;" Guid="a652f360-7f70-4e14-aef8-0e86903fbbd2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAAZCAYAAABpaJ3KAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFcSURBVFhH7ZhLjoMwDIZzQaSehkXFNViFk1BxjC44AUuO4GInzotQaGY6Ykgs/QtiJ/HnOAghIFMr4NM0Qdu2UNf1JYVsyMhmwNExDAPM83xJIRsyshlwrEpswpWEjGwFvIDv6dGAEMLqJmGMxcVEcxvoY76PNIK8Cai6MeLbVjo4JV6BfNqxsauOw38JvL8vB3Dvg5i1ksHjkD00QTE29Wvgvr4OHjtxX+sW9JLS4BILqK9K89BznxIqXLvDGOXDdajYznO4j+vfg08HX0QgvNHq9I6Ah8+6kAS+juW1FCDv98et7gtbHOEXmfY/Au52jBPPJ86+8Fl3ywnAWaoAKokj4H6XoP/k4GozcyeD8TRwJ/7MJ67umZMMihKyY5SEaX19HTxwpzDu3DODk3TyVn7rqoStj97gwYm/fasngJucdr4nfgb+j1XAFyvg2YJn+wcm239uuVmm4AAv6FwgKiqKbLsAAAAASUVORK5CYII=" InformativeScreenshot="fff3ce74e4550a757d7eb02bee4a0039.png" Reference="G0nWXQ8GcUqHlwjLlnOM5w/9j_CsRFYskGy4OvF8cxyaw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='https://botsdna.com/vitrualplots/' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d6c9463d5bb4d2c4805228030192b672.png" Selector="&lt;html app='chrome.exe' url='https://botsdna.com/vitrualplots/' /&gt;" Url="[in_Config(&quot;VirtualPlotsURL&quot;).ToString]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Chrome: https://botsdna.com/vitrualplots/Than (Thank you page - bookig number)" sap:VirtualizedContainerService.HintSize="434,697" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e01a65ee-0b3a-4e3b-bd27-769e291ba542" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do (Get booking number)" sap:VirtualizedContainerService.HintSize="376,481" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'lbl_BookingNumber'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="e01a65ee-0b3a-4e3b-bd27-769e291ba542" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable Accuracy="0.4" BrowserURL="https://botsdna.com/vitrualplots/Thanks.html" ContentHash="b893_quw8kWCuAfnOMl9ww" DesignTimeRectangle="16, 553, 1350, 37" ElementType="Text" FriendlyName="'lbl_BookingNumber'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzyAccuracy="0.4" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='' aaname='*' /&gt;" Guid="b474209e-e089-4e0b-8b54-99568731053b" ImageBase64="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" InformativeScreenshot="e747d81c4f30d0eac96f09c38d5b9a0f.png" Reference="G0nWXQ8GcUqHlwjLlnOM5w/OKyeapYeKkSeQAZSztYX3g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='https://botsdna.com/vitrualplots/Thanks.html' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target Accuracy="0.7" DesignTimeRectangle="14, 482, 1354, 110" ElementType="Text" FriendlyName="'lbl_BookingNumber'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' aaname='*Booking Number*' check:innerText='Booking Number&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;89198884' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">[str_BookingNumber]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <ui:LogMessage DisplayName="Log Message (Booking Numbr)" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Booking Number is &quot;+str_BookingNumber]" />
+            <Assign DisplayName="Assign (out_BookingNumber)" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_str_BookingNumber]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[str_BookingNumber]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="o_bhWqv96E-ol0ALuuc_GA" IconBase64="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" InformativeScreenshot="9139e2c7177b28d6f2611e337474d598.png" Reference="G0nWXQ8GcUqHlwjLlnOM5w/EyRkPD2X70qA7kiMnTSyXg" Selector="&lt;html app='chrome.exe' title='https://botsdna.com/vitrualplots/Thanks.html' /&gt;" Url="https://botsdna.com/vitrualplots/Thanks.html" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

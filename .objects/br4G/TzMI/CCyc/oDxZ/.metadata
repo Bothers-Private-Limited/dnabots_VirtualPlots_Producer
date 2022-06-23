@@ -1,0 +1,13 @@
+﻿{
+  "Id": "oDxZZ08NDEuLaLf96c_beg",
+  "Reference": "G0nWXQ8GcUqHlwjLlnOM5w/oDxZZ08NDEuLaLf96c_beg",
+  "ParentRef": "G0nWXQ8GcUqHlwjLlnOM5w/CCyckHxNWEqeFcMXYVapIQ",
+  "Name": "txt_PlotNo",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2022-06-19T17:37:13.0200791Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-19T17:37:13.0200791Z"
+}

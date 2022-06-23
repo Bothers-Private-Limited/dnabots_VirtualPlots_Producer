@@ -1,0 +1,17 @@
+﻿{
+  "Id": "OKyeapYeKkSeQAZSztYX3g",
+  "Reference": "G0nWXQ8GcUqHlwjLlnOM5w/OKyeapYeKkSeQAZSztYX3g",
+  "ParentRef": "G0nWXQ8GcUqHlwjLlnOM5w/EyRkPD2X70qA7kiMnTSyXg",
+  "Name": "lbl_BookingNumber",
+  "Description": "fetch booking number",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-06-19T18:32:53.8182647Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-19T19:18:17.3196886Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

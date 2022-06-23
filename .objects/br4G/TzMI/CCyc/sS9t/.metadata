@@ -1,0 +1,16 @@
+﻿{
+  "Id": "sS9tK__zOkWgS9LYXPNBRg",
+  "Reference": "G0nWXQ8GcUqHlwjLlnOM5w/sS9tK__zOkWgS9LYXPNBRg",
+  "ParentRef": "G0nWXQ8GcUqHlwjLlnOM5w/CCyckHxNWEqeFcMXYVapIQ",
+  "Name": "lbl_Name_Seller",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-06-19T18:18:10.6768269Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-19T18:24:06.7081778Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

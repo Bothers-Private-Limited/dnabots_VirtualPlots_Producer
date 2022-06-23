@@ -1,0 +1,13 @@
+﻿{
+  "Id": "7m6-Q6tRjEmJX4WbrgdOUg",
+  "Reference": "G0nWXQ8GcUqHlwjLlnOM5w/7m6-Q6tRjEmJX4WbrgdOUg",
+  "ParentRef": "G0nWXQ8GcUqHlwjLlnOM5w/CCyckHxNWEqeFcMXYVapIQ",
+  "Name": "radiobtn_Seller",
+  "Type": "Element",
+  "TaxonomyType": "RadioButton",
+  "Created": "2022-06-19T17:37:12.4963796Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-19T17:37:12.4963796Z"
+}
